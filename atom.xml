@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://Threee-hub.github.io/"/>
-  <updated>2019-11-07T08:29:06.774Z</updated>
+  <updated>2019-11-08T04:49:30.156Z</updated>
   <id>http://Threee-hub.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>静态属性、代码块的执行顺序</title>
+    <link href="http://Threee-hub.github.io/2019/11/08/%E4%BB%A3%E7%A0%81%E5%9D%97/"/>
+    <id>http://Threee-hub.github.io/2019/11/08/代码块/</id>
+    <published>2019-11-08T04:47:47.191Z</published>
+    <updated>2019-11-08T04:49:30.156Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="静态属性、静态代码块以及构造代码块的执行先后顺序"><a href="#静态属性、静态代码块以及构造代码块的执行先后顺序" class="headerlink" title="静态属性、静态代码块以及构造代码块的执行先后顺序"></a>静态属性、静态代码块以及构造代码块的执行先后顺序</h2><blockquote><p>最近遇到一道Java先后调用的题（下图），程序中输出A.x和B.y的值。</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/threee-hub/img@master/%E4%BB%A3%E7%A0%81%E5%9D%97.png" alt="代码块"></p><blockquote><p>如图，输出1，2。       那么是为什么呢<br>从主函数开始，载入A类，A类具有静态属性和静态代码块，而静态属性和静态代码块是按顺序执行，哪个在前面就先执行哪个，所以x被赋初值为0<br>再执行静态代码块，此时调用B类，静态属性y并未赋值而是被JVM赋了初值0，因此此时x=1，y=0.并输出“静态代码块被调用”<br>下一步主函数创建了A类的对象，构造代码块被调用并输出，下一步输出B.y，y被赋值 y=A.x + 1 = 1+1=2.  最后输出1和2.</p></blockquote><h5 id="因此我们可以得出结果，静态属性和静态代码块是按顺序执行，哪个在前面就先执行哪个，而构造代码块是当类对象实例化时（new时）被调用。这题还有一个知识点就是类的生命周期，下次再学习分享一下哦"><a href="#因此我们可以得出结果，静态属性和静态代码块是按顺序执行，哪个在前面就先执行哪个，而构造代码块是当类对象实例化时（new时）被调用。这题还有一个知识点就是类的生命周期，下次再学习分享一下哦" class="headerlink" title="因此我们可以得出结果，静态属性和静态代码块是按顺序执行，哪个在前面就先执行哪个，而构造代码块是当类对象实例化时（new时）被调用。这题还有一个知识点就是类的生命周期，下次再学习分享一下哦~"></a>因此我们可以得出结果，静态属性和静态代码块是按顺序执行，哪个在前面就先执行哪个，而构造代码块是当类对象实例化时（new时）被调用。这题还有一个知识点就是类的生命周期，下次再学习分享一下哦~</h5>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;静态属性、静态代码块以及构造代码块的执行先后顺序&quot;&gt;&lt;a href=&quot;#静态属性、静态代码块以及构造代码块的执行先后顺序&quot; class=&quot;headerlink&quot; title=&quot;静态属性、静态代码块以及构造代码块的执行先后顺序&quot;&gt;&lt;/a&gt;静态属性、静态代码块以及构造
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>firstblg</title>
