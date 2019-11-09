@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://Threee-hub.github.io/"/>
-  <updated>2019-11-09T13:01:09.641Z</updated>
+  <updated>2019-11-09T13:08:16.619Z</updated>
   <id>http://Threee-hub.github.io/</id>
   
   <author>
@@ -21,16 +21,9 @@
     <link href="http://Threee-hub.github.io/2019/11/09/codetest/"/>
     <id>http://Threee-hub.github.io/2019/11/09/codetest/</id>
     <published>2019-11-09T12:54:27.000Z</published>
-    <updated>2019-11-09T13:01:09.641Z</updated>
-    
-    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line">class A &#123;</span><br><span class="line">public static int x; // 静态属性</span><br><span class="line">public int f;</span><br><span class="line">static &#123;</span><br><span class="line">x = B.y + 1; // 静态代码块</span><br><span class="line">System.out.println(&quot;静态代码块调用了&quot;);</span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line">f = 2;</span><br><span class="line">System.out.println(f);</span><br><span class="line">System.out.println(&quot;构造代码块调用了&quot;);// 构造代码块</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> ]]></content>
+    <updated>2019-11-09T13:08:16.619Z</updated>
     
     <summary type="html">
-    
-      
-      
-        &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class
-      
     
     </summary>
     
