@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://Threee-hub.github.io/"/>
-  <updated>2019-11-09T13:08:16.619Z</updated>
+  <updated>2019-11-10T11:49:46.435Z</updated>
   <id>http://Threee-hub.github.io/</id>
   
   <author>
@@ -17,17 +17,29 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>代码设置</title>
+    <title>子类调用构造函数时遇到的小问题</title>
     <link href="http://Threee-hub.github.io/2019/11/09/codetest/"/>
     <id>http://Threee-hub.github.io/2019/11/09/codetest/</id>
     <published>2019-11-09T12:54:27.000Z</published>
-    <updated>2019-11-09T13:08:16.619Z</updated>
+    <updated>2019-11-10T11:49:46.435Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="子类调用构造函数时遇到的小问题"><a href="#子类调用构造函数时遇到的小问题" class="headerlink" title="子类调用构造函数时遇到的小问题"></a>子类调用构造函数时遇到的小问题</h3><blockquote><p>当子类调用构造函数时，若未使用this()和super()，系统则会在子类构造函数时自动调用父类的无参构造函数（即自动补上super()）,因此若父类并未构造无参构造函数时，程序就会报错。</p></blockquote><pre><code>public class student extends person{    public student(String name, int age, char sex) {    }}class person {    private String name;    private int age;    private char sex;    public person(String name, int age, char sex) {        this.name = name;        this.age = age;        this.sex = sex;    }}</code></pre><p><img src="https://cdn.jsdelivr.net/gh/threee-hub/img@master/1110%E9%94%99%E8%AF%AF%E6%88%AA%E5%9B%BE2.png" alt="错误信息01"><br><img src="https://cdn.jsdelivr.net/gh/threee-hub/img@master/1110%E9%94%99%E8%AF%AF%E6%88%AA%E5%9B%BE.png" alt="错误信息02"></p><blockquote><p>解决这个问题的方法如下：</p></blockquote><ul><li>在父类中添加无参构造方法 person(){}</li><li>在子类的构造方法中添加 super( name, age, sex )</li></ul>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;子类调用构造函数时遇到的小问题&quot;&gt;&lt;a href=&quot;#子类调用构造函数时遇到的小问题&quot; class=&quot;headerlink&quot; title=&quot;子类调用构造函数时遇到的小问题&quot;&gt;&lt;/a&gt;子类调用构造函数时遇到的小问题&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;当子类调用
+      
     
     </summary>
     
     
+    
+      <category term="java" scheme="http://Threee-hub.github.io/tags/java/"/>
+    
+      <category term="super() and this()" scheme="http://Threee-hub.github.io/tags/super-and-this/"/>
     
   </entry>
   
