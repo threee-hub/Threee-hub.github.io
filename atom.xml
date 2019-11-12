@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://Threee-hub.github.io/"/>
-  <updated>2019-11-10T11:49:46.435Z</updated>
+  <updated>2019-11-12T15:46:43.244Z</updated>
   <id>http://Threee-hub.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>操作系统 - 计算机系统概述 错题解析 一</title>
+    <link href="http://Threee-hub.github.io/2019/11/12/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%94%99%E9%A2%9801/"/>
+    <id>http://Threee-hub.github.io/2019/11/12/操作系统错题01/</id>
+    <published>2019-11-12T15:41:37.000Z</published>
+    <updated>2019-11-12T15:46:43.244Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="操作系统-——-计算机系统概述-错题解析-一"><a href="#操作系统-——-计算机系统概述-错题解析-一" class="headerlink" title="操作系统 —— 计算机系统概述 错题解析 一"></a>操作系统 —— 计算机系统概述 错题解析 一</h3><blockquote><p>应用题：计算CPU利用率。（利用<strong>甘特图</strong>求解）<br><img src="https://cdn.jsdelivr.net/gh/threee-hub/img@master/codesrc/111202.jpg" alt="题目一"><br><img src="https://cdn.jsdelivr.net/gh/threee-hub/img@master/%E7%94%98%E7%89%B9%E5%9B%BE.jpg" alt="答案一"><br><img src="https://cdn.jsdelivr.net/gh/threee-hub/img@master/codesrc/111201.jpg" alt="答案二"></p><ul><li>绘制甘特图时，需注意<strong>打印设备、处理器</strong>是只能有一个程序使用而不能多个程序同时使用。</li><li>多道批处理系统的<strong>I/O设备</strong>可与<strong>CPU</strong>并行工作，这是借助于<strong>中断技术</strong> 实现的。</li></ul></blockquote><blockquote><hr></blockquote><blockquote><p>选择题：</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/threee-hub/img@master/codesrc/111203.jpg" alt="题目二"></p><blockquote><ul><li>计算机开机后，操作系统最终被加载到RAM中。</li><li>裸机状态时，BIOS存在在ROM中，且只有ROM中有数据。</li></ul><hr><p><img src="https://cdn.jsdelivr.net/gh/threee-hub/img@master/codesrc/111204.jpg" alt="题目三"></p><ul><li>操作系统接口分为三部分：<pre><code>- 命令接口：用户利用这些操作命令来组织和控制作业的执行。方式有两种：联机控制方式和脱机控制方式。- 图形接口：如GUI（图形用户界面），严格来说GUI图形接口不是操作系统的一部分，但图形接口所调用的系统调用命令是操作系统的一部分。图形接口也是通过调用程序接口实现的。- 程序接口（即系统调用）: 由一组系统调用命令组成。用户通过在程序中使用这些系统调用命令来请求操作系统为其提供服务。</code></pre></li><li>Shell 是指“为使用者提供操作界面”的软件（即命令解析器），属于命令接口。它接收用户命令，然后调用相应的应用程序。</li><li>广义指令就是系统调用指令。而系统中的缓存全部由操作系统管理，对用户是透明的，操作系统不提供管理系统缓存的系统调用。</li></ul></blockquote><blockquote><hr></blockquote><p><img src="https://cdn.jsdelivr.net/gh/threee-hub/img@master/codesrc/111205.jpg" alt="题目四"></p><blockquote><ul><li>多道程序的运行环境比单道程序更加复杂，但是多道程序时程序的执行就失去了封闭性和顺序性。并且因为<strong>共享</strong>资源及相互协同而产生了竞争，相互<strong>制约</strong>。多道程序设计的系统中允许多个程序进入内存，但为了公平性，各个程序是<strong>交替</strong>运行，当一道程序暂停时，CPU立即转去运行其他程序。</li></ul></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;操作系统-——-计算机系统概述-错题解析-一&quot;&gt;&lt;a href=&quot;#操作系统-——-计算机系统概述-错题解析-一&quot; class=&quot;headerlink&quot; title=&quot;操作系统 —— 计算机系统概述 错题解析 一&quot;&gt;&lt;/a&gt;操作系统 —— 计算机系统概述 错题解析
+      
+    
+    </summary>
+    
+    
+    
+      <category term="操作系统" scheme="http://Threee-hub.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>子类调用构造函数时遇到的小问题</title>
