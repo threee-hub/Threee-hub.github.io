@@ -1,0 +1,42 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="操作系统 - 计算机系统概述 错题解析 二"><meta name="keywords" content="操作系统"><meta name="author" content="刘山"><meta name="copyright" content="刘山"><title>操作系统 - 计算机系统概述 错题解析 二 | 刘山的博客</title><link rel="shortcut icon" href="/melody-favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.6.1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.6.1"><link rel="dns-prefetch" href="https://cdn.staticfile.org"><link rel="dns-prefetch" href="https://cdn.bootcss.com"><link rel="dns-prefetch" href="https://creativecommons.org"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  }
+} </script></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#操作系统-——-计算机系统概述-错题解析-二"><span class="toc-number">1.</span> <span class="toc-text">操作系统 —— 计算机系统概述 错题解析 二</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="https://cdn.jsdelivr.net/gh/threee-hub/img@master/hdImg_cd8aa98cb74d752865d3c27d46371cd015731849466.jpg"></div><div class="author-info__name text-center">刘山</div><div class="author-info__description text-center">准Java程序员、精通各大语言的拼写。</div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">4</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">4</span></a></div><hr><div class="author-info-links"><div class="author-info-links__title text-center">Links</div><a class="author-info-links__name text-center" href="https://lzcxfz.cn/" target="_blank" rel="noopener">臭弟弟</a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://cdn.jsdelivr.net/gh/threee-hub/img@master/yys.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">刘山的博客</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page" href="/">Blog</a><a class="site-page" href="/archives">Posts</a><a class="site-page" href="/tags">MyTags</a><a class="site-page" href="/categories">MyCategories</a></span></div><div id="post-info"><div id="post-title">操作系统 - 计算机系统概述 错题解析 二</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2019-11-13</time></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h3 id="操作系统-——-计算机系统概述-错题解析-二"><a href="#操作系统-——-计算机系统概述-错题解析-二" class="headerlink" title="操作系统 —— 计算机系统概述 错题解析 二"></a>操作系统 —— 计算机系统概述 错题解析 二</h3><blockquote>
+<p>选择题：<br><img src="https://cdn.jsdelivr.net/gh/threee-hub/img@master/codesrc/111301.png" alt="题目一"><br>答案为 C 。</p>
+<ol>
+<li>批处理的主要缺点是缺少<strong>交互性</strong></li>
+<li>多道程序设计的提出是为了<strong>提高系统利用率和吞吐量</strong>。</li>
+<li>I/O通道是实际上是一种特殊的<strong>处理器</strong>，它具有执行I/O指令的能力，并通过执行通道程序来控制I/O操作。特点为：通道指令类型单一（局限于与I/O操作有关的指令）、通道没有自己的内存（通道执行的指令一般放在其主机的内存中）。</li>
+</ol>
+</blockquote>
+<blockquote>
+<hr>
+<p><img src="https://cdn.jsdelivr.net/gh/threee-hub/img@master/codesrc/111302.png" alt="题目二"><br>答案为 A 。命令解释程序（如Shell）属于命令接口，在用户态执行。</p>
+</blockquote>
+<blockquote>
+<hr>
+<p><img src="https://cdn.jsdelivr.net/gh/threee-hub/img@master/codesrc/111303.png" alt="题目三"><br>答案为 B 。</p>
+<ol>
+<li>中断处理和子程序调用时，一定会保存PC（程序计数器）。</li>
+<li>通用数据寄存器和通用地址寄存器在子程序调用时，若有数据更改则需要保存若无更改则不需要。</li>
+<li>程序状态字寄存器（PSWR）: 运算器的一部分，其中某标志位<strong>标记了当前处理器状态（内核态 or 用户态）</strong>。中断处理程序结束时，需将处理器状态切换回原有状态（即修改PSWR标志位）。PSW用来存放两类信息：一类是体现当前指令执行结果的各种状态信息，如有无进位（CY位），有无溢出（OV位），结果正负（SF位），结果是否为零（ZF位），奇偶标志位（P位）等；另一类是存放控制信息，如允许中断(IF位)，跟踪标志（TF位）等。有些机器中将PSW称为标志寄存器FR（Flag Register）。</li>
+</ol>
+</blockquote>
+<blockquote>
+<hr>
+<p><img src="https://cdn.jsdelivr.net/gh/threee-hub/img@master/codesrc/111304.png" alt="题目四"><br>答案为 C 。（看清题目是在用户态<strong>发生</strong>还是<strong>执行</strong>）<br>进程切换是发生在系统调用执行过程中的事件，因此只能发生在内核态。</p>
+</blockquote>
+<blockquote>
+<hr>
+<p><img src="https://cdn.jsdelivr.net/gh/threee-hub/img@master/codesrc/111305.png" alt="题目五"><br>答案为 C 。<br>当要执行系统调用时，用户先传递系统调用参数给通用寄存器，再执行陷入（trap）指令进入内核态，从通用寄存器中得到数据执行相应的服务程序，执行结束后回到用户态。<br><strong>陷入（trap）指令： 又称访管指令。系统调用时，该指令使处理机从用户态转为内核态</strong>。</p>
+</blockquote>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined" target="_blank" rel="noopener">刘山</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://threee-hub.github.io/2019/11/13/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%94%99%E9%A2%9802/">http://threee-hub.github.io/2019/11/13/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%94%99%E9%A2%9802/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://Threee-hub.github.io">刘山的博客</a>！</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></div><nav id="pagination"><div class="next-post pull-right"><a href="/2019/11/12/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%94%99%E9%A2%9801/"><span>操作系统 - 计算机系统概述 错题解析 一</span><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer class="footer-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/threee-hub/img@master/yys.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2013 - 2019 By 刘山</div><div class="framework-info"><span>驱动 - </span><a href="http://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody" target="_blank" rel="noopener"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.6.1"></script><script src="/js/fancybox.js?version=1.6.1"></script><script src="/js/sidebar.js?version=1.6.1"></script><script src="/js/copy.js?version=1.6.1"></script><script src="/js/fireworks.js?version=1.6.1"></script><script src="/js/transition.js?version=1.6.1"></script><script src="/js/scroll.js?version=1.6.1"></script><script src="/js/head.js?version=1.6.1"></script><script>if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+}</script></body></html>

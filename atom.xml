@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://Threee-hub.github.io/"/>
-  <updated>2019-11-13T05:11:10.977Z</updated>
+  <updated>2019-11-13T13:07:24.813Z</updated>
   <id>http://Threee-hub.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>操作系统 - 计算机系统概述 错题解析 二</title>
+    <link href="http://Threee-hub.github.io/2019/11/13/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%94%99%E9%A2%9802/"/>
+    <id>http://Threee-hub.github.io/2019/11/13/操作系统错题02/</id>
+    <published>2019-11-13T11:03:14.000Z</published>
+    <updated>2019-11-13T13:07:24.813Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="操作系统-——-计算机系统概述-错题解析-二"><a href="#操作系统-——-计算机系统概述-错题解析-二" class="headerlink" title="操作系统 —— 计算机系统概述 错题解析 二"></a>操作系统 —— 计算机系统概述 错题解析 二</h3><blockquote><p>选择题：<br><img src="https://cdn.jsdelivr.net/gh/threee-hub/img@master/codesrc/111301.png" alt="题目一"><br>答案为 C 。</p><ol><li>批处理的主要缺点是缺少<strong>交互性</strong></li><li>多道程序设计的提出是为了<strong>提高系统利用率和吞吐量</strong>。</li><li>I/O通道是实际上是一种特殊的<strong>处理器</strong>，它具有执行I/O指令的能力，并通过执行通道程序来控制I/O操作。特点为：通道指令类型单一（局限于与I/O操作有关的指令）、通道没有自己的内存（通道执行的指令一般放在其主机的内存中）。</li></ol></blockquote><blockquote><hr><p><img src="https://cdn.jsdelivr.net/gh/threee-hub/img@master/codesrc/111302.png" alt="题目二"><br>答案为 A 。命令解释程序（如Shell）属于命令接口，在用户态执行。</p></blockquote><blockquote><hr><p><img src="https://cdn.jsdelivr.net/gh/threee-hub/img@master/codesrc/111303.png" alt="题目三"><br>答案为 B 。</p><ol><li>中断处理和子程序调用时，一定会保存PC（程序计数器）。</li><li>通用数据寄存器和通用地址寄存器在子程序调用时，若有数据更改则需要保存若无更改则不需要。</li><li>程序状态字寄存器（PSWR）: 运算器的一部分，其中某标志位<strong>标记了当前处理器状态（内核态 or 用户态）</strong>。中断处理程序结束时，需将处理器状态切换回原有状态（即修改PSWR标志位）。PSW用来存放两类信息：一类是体现当前指令执行结果的各种状态信息，如有无进位（CY位），有无溢出（OV位），结果正负（SF位），结果是否为零（ZF位），奇偶标志位（P位）等；另一类是存放控制信息，如允许中断(IF位)，跟踪标志（TF位）等。有些机器中将PSW称为标志寄存器FR（Flag Register）。</li></ol></blockquote><blockquote><hr><p><img src="https://cdn.jsdelivr.net/gh/threee-hub/img@master/codesrc/111304.png" alt="题目四"><br>答案为 C 。（看清题目是在用户态<strong>发生</strong>还是<strong>执行</strong>）<br>进程切换是发生在系统调用执行过程中的事件，因此只能发生在内核态。</p></blockquote><blockquote><hr><p><img src="https://cdn.jsdelivr.net/gh/threee-hub/img@master/codesrc/111305.png" alt="题目五"><br>答案为 C 。<br>当要执行系统调用时，用户先传递系统调用参数给通用寄存器，再执行陷入（trap）指令进入内核态，从通用寄存器中得到数据执行相应的服务程序，执行结束后回到用户态。<br><strong>陷入（trap）指令： 又称访管指令。系统调用时，该指令使处理机从用户态转为内核态</strong>。</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;操作系统-——-计算机系统概述-错题解析-二&quot;&gt;&lt;a href=&quot;#操作系统-——-计算机系统概述-错题解析-二&quot; class=&quot;headerlink&quot; title=&quot;操作系统 —— 计算机系统概述 错题解析 二&quot;&gt;&lt;/a&gt;操作系统 —— 计算机系统概述 错题解析
+      
+    
+    </summary>
+    
+    
+    
+      <category term="操作系统" scheme="http://Threee-hub.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>操作系统 - 计算机系统概述 错题解析 一</title>
@@ -42,10 +66,10 @@
   
   <entry>
     <title>子类调用构造函数时遇到的小问题</title>
-    <link href="http://Threee-hub.github.io/2019/11/09/codetest/"/>
-    <id>http://Threee-hub.github.io/2019/11/09/codetest/</id>
+    <link href="http://Threee-hub.github.io/2019/11/09/%E5%AD%90%E7%B1%BB%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95/"/>
+    <id>http://Threee-hub.github.io/2019/11/09/子类构造方法/</id>
     <published>2019-11-09T12:54:27.000Z</published>
-    <updated>2019-11-10T11:49:46.435Z</updated>
+    <updated>2019-11-13T13:09:17.952Z</updated>
     
     <content type="html"><![CDATA[<h3 id="子类调用构造函数时遇到的小问题"><a href="#子类调用构造函数时遇到的小问题" class="headerlink" title="子类调用构造函数时遇到的小问题"></a>子类调用构造函数时遇到的小问题</h3><blockquote><p>当子类调用构造函数时，若未使用this()和super()，系统则会在子类构造函数时自动调用父类的无参构造函数（即自动补上super()）,因此若父类并未构造无参构造函数时，程序就会报错。</p></blockquote><pre><code>public class student extends person{    public student(String name, int age, char sex) {    }}class person {    private String name;    private int age;    private char sex;    public person(String name, int age, char sex) {        this.name = name;        this.age = age;        this.sex = sex;    }}</code></pre><p><img src="https://cdn.jsdelivr.net/gh/threee-hub/img@master/1110%E9%94%99%E8%AF%AF%E6%88%AA%E5%9B%BE2.png" alt="错误信息01"><br><img src="https://cdn.jsdelivr.net/gh/threee-hub/img@master/1110%E9%94%99%E8%AF%AF%E6%88%AA%E5%9B%BE.png" alt="错误信息02"></p><blockquote><p>解决这个问题的方法如下：</p></blockquote><ul><li>在父类中添加无参构造方法 person(){}</li><li>在子类的构造方法中添加 super( name, age, sex )</li></ul>]]></content>
     
@@ -61,9 +85,7 @@
     
     
     
-      <category term="java" scheme="http://Threee-hub.github.io/tags/java/"/>
-    
-      <category term="super() and this()" scheme="http://Threee-hub.github.io/tags/super-and-this/"/>
+      <category term="Java" scheme="http://Threee-hub.github.io/tags/Java/"/>
     
   </entry>
   
