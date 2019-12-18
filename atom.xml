@@ -41,6 +41,31 @@
   </entry>
   
   <entry>
+    <title>Linux命令</title>
+    <link href="http://Threee-hub.github.io/2019/11/26/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    <id>http://Threee-hub.github.io/2019/11/26/linux常用命令/</id>
+    <published>2019-11-26T15:35:58.000Z</published>
+    <updated>2019-12-18T01:37:48.696Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>man 命令        查看一个命令的用法（q键退出）<br>文件管理命令                   //命令里输入部分后 可以按tab键可以进行自动补全，前提是只有一个<br> ls 查看目录                                             linux常见目录<br>    -a  查看所有文件 包括隐藏文件                 /        根目录<br>    -l   查看详细列表                         ~        代表当前用户的家目录<br>    -d  仅仅查看目录                         home        每个用户会在home目录下创建一个新的目录对应该用户的家目录<br>cd 切换目录<br>pwd 查看当前所在的路径<br>touch 文件名   触摸一个文件，存在就改变文件的最后访问时间，不存在就创建文件<br>mkdir 目录名   创建目录        -p  递归创建（可以同时创建多级目录） Eg：mkdir -p java/thread/test<br>cp 源文件 目标地址       拷贝文件或目录       -r   递归拷贝（拷贝文件夹）   Eg：cp -r 源目录 目标目录<br>rmdir 目录名称    删除空目录<br>rm 文件名               删除文件               rm -r 目录名       递归删除目录    -f   强制删除<br>mv 文件名           剪切文件或目录     mv  源文件或目录   目标位置    mv    原文件名   新文件名   重命名文件<br>cat 文件名   查看文件里面的内容   -n  查看内容并显示行号   cat -n |more 分页查看文件里面的内容并显示行号，按空格查看下一页，按回车查看下一行<br>tac 文件名   倒过来查看文件里面的内容<br>head -n（数字）文件名    查看文件前n行的内容<br>tail -n（数字）文件名    查看文件后n行的内容</p></blockquote><p>vi(vim)    文件名     编辑文件，若不存在则创建这个文件 三种模式：<br>1、命令模式    vi(vim)   文件名<br>nyy   n代表一个数值  默认为1，表示复制光标开始往下n行<br>p  粘贴<br>ndd   n代表一个数值  默认为1，表示删除光标开始往下n行<br>：set number   设置行号<br>：行号  让光标定位到指定行<br>2、输入模式 （在命令模式输入a,A,i,I,o  进入输入模式，按esc回到命令模式）<br>i（在当前光标位置的前面插入）I（返回当前行最前面进行输入）<br>a（在当前光标位置的后面插入）A（返回当前行最后面进行输入）<br>o（在下一行插入）<br>3、编辑模式（在命令模式输入：进入编辑模式，按esc回到命令模式）：q 退出  ：w  保存  ：！强制   ：q！强制退出  ：wq 保存退出</p><p>find -name 文件名       根据文件名查找   “<em>文件部分名*”（查找包含该部分文件名的文件）<br>       -iname  文件名     根据文件名查找（忽略大小写）<br>find 指定的路径 -name 文件名         查找路径下来所有该文件名的文件                    Eg: find /home/ -name test<br>find /home/ -name “</em>.log”  查找该后缀的文件（在home路径下）<br>find  -size [+(大于)或-(小于)]文件大小     根据文件大小进行查找（大小单位默认字节）                        Eg：find /home/ -size +1G    查找该路径下大于1g的文件    单位：c，k，M,G<br>       -atime       根据最近修改时间进行查找（天）<br>       -ctime<br>       -mtime<br>find /home/ -atime +5    查找5天前访问过的文件（-5则是5天之内）<br>逻辑运算查找：<br>    -a   and   逻辑与<br>    -o     or     逻辑或<br>    -not  非      取反                       Eg：find /home/ -name “<em>hello</em>” -a -size +1M   查找文件名中包含hello的以及大小大于1M的文件</p><p>reboot   重启</p><p>文件的压缩与解压缩<br>1、zip压缩文件命令<br>    zip 压缩包名  文件名                    同时压缩多个则在文件名后再加文件名<br>    zip  -r   压缩包名  目录名              压缩目录所有文件在同一压缩包中<br>    unzip 压缩包名                             解压缩在当前目录下<br>    unzip -d 指定一个目录 压缩包名        解压缩到指定一个目录下<br>2、gz压缩文件命令<br>    gzip 要压缩的文件名            生成压缩文件后，原文件会默认删除</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;man 命令        查看一个命令的用法（q键退出）&lt;br&gt;文件管理命令                   //命令里输入部分后 可以按tab键可以进行自动补全，前提是只有一个&lt;br&gt; ls 查看目录                    
+      
+    
+    </summary>
+    
+    
+    
+      <category term="linux" scheme="http://Threee-hub.github.io/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title>操作系统 - 计算机系统概述 错题解析 二</title>
     <link href="http://Threee-hub.github.io/2019/11/13/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%94%99%E9%A2%9802/"/>
     <id>http://Threee-hub.github.io/2019/11/13/操作系统错题02/</id>
