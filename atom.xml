@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://Threee-hub.github.io/"/>
-  <updated>2019-12-18T02:18:13.047Z</updated>
+  <updated>2019-12-19T08:39:02.053Z</updated>
   <id>http://Threee-hub.github.io/</id>
   
   <author>
@@ -17,11 +17,65 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>采取hdfd命令来对FileSystem进行操作</title>
+    <link href="http://Threee-hub.github.io/2019/12/19/hadoop%E5%91%BD%E4%BB%A4/"/>
+    <id>http://Threee-hub.github.io/2019/12/19/hadoop命令/</id>
+    <published>2019-12-19T15:35:58.000Z</published>
+    <updated>2019-12-19T08:39:02.053Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="采取hdfd命令来对FileSystem进行操作"><a href="#采取hdfd命令来对FileSystem进行操作" class="headerlink" title="采取hdfd命令来对FileSystem进行操作"></a>采取hdfd命令来对FileSystem进行操作</h3><ol><li>创建文件夹<br> hadoop fs -mkdir 文件名    分布式文件系统的目录    Eg：hadoop fs -mkdir /java/</li><li>上传文件<br> hadoop fs -put Linnux文件下的文件    hdfs下面的文件</li><li>下载文件<br> hadoop fs -get 分布式文件系统的文件 下载到的路径</li><li>删除文件或目录<br> hadoop fs -rm 分布式文件系统的文件<br> hadoop fs -rmr 分布式文件系统的目录</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;采取hdfd命令来对FileSystem进行操作&quot;&gt;&lt;a href=&quot;#采取hdfd命令来对FileSystem进行操作&quot; class=&quot;headerlink&quot; title=&quot;采取hdfd命令来对FileSystem进行操作&quot;&gt;&lt;/a&gt;采取hdfd命令来对File
+      
+    
+    </summary>
+    
+    
+    
+      <category term="linux" scheme="http://Threee-hub.github.io/tags/linux/"/>
+    
+      <category term="hadoop" scheme="http://Threee-hub.github.io/tags/hadoop/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hadoop 伪分布式搭建配置</title>
+    <link href="http://Threee-hub.github.io/2019/12/19/hadoop%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8F%E6%90%AD%E5%BB%BA%E9%85%8D%E7%BD%AE/"/>
+    <id>http://Threee-hub.github.io/2019/12/19/hadoop伪分布式搭建配置/</id>
+    <published>2019-12-19T08:30:30.000Z</published>
+    <updated>2019-12-19T08:38:16.795Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="hadoop-伪分布式搭建配置"><a href="#hadoop-伪分布式搭建配置" class="headerlink" title="hadoop 伪分布式搭建配置"></a>hadoop 伪分布式搭建配置</h3><p><strong>安装JDK</strong></p><ol><li><p>上传alt+p 后出现sftp窗口，然后put d:\xxx\yy\ll\jdk-7u_65-i585.tar.gz</p></li><li><p>解压jdk</p><pre><code>#创建文件夹mkdir /home/hadoop/app#解压tar -zxvf jdk-7u65-linux-i586.tar.gz -C /home/hadoop/app</code></pre></li><li><p>将java添加到环境变量中</p><pre><code>vim /etc/profile#在文件最后添加export JAVA_HOME=//usr/tools/jdk-7u_65-i585    //jdk安装路径export PATH=$PATH:$JAVA_HOME/bin#刷新配置source /etc/profile</code></pre></li></ol><p><strong>安装hadoop-2.4.1</strong></p><blockquote><p>先上传hadoop的安装包到虚拟机上去/home/hadoop/<br>注意：hadoop2.x的配置文件$HADOOP_HOME/etc/hadoop<br>伪分布式需要修改5个配置文件</p></blockquote><p><strong>配置hadoop</strong></p><pre><code>第一个：hadoop-env.sh    vim hadoop-env.sh    #第27行    export JAVA_HOME=/software/jdk1.7.0_65   //jdk安装路径第二个：core-site.xml    &lt;!-- 指定HADOOP所使用的文件系统schema（URI），HDFS的老大（NameNode）的地址 --&gt;    &lt;property&gt;        &lt;name&gt;fs.defaultFS&lt;/name&gt;        &lt;value&gt;hdfs://192.168.175.130:9000（虚拟机IP。9000不改）&lt;/value&gt;    &lt;/property&gt;    &lt;!-- 指定hadoop运行时产生文件的存储目录 --&gt;    &lt;property&gt;        &lt;name&gt;hadoop.tmp.dir&lt;/name&gt;        &lt;value&gt;//usr/soft/hadoop-2.4.1/tmp（hadoop运行时产生文件的存储目录）&lt;/value&gt;            &lt;/property&gt;第三个：hdfs-site.xml       &lt;!-- 指定HDFS副本的数量 --&gt;    &lt;property&gt;        &lt;name&gt;dfs.replication&lt;/name&gt;        &lt;value&gt;1&lt;/value&gt;&lt;/property&gt;第四个：mapred-site.xml     mv mapred-site.xml.template mapred-site.xml   //剪切更改模板    vim mapred-site.xml    &lt;!-- 指定mr运行在yarn上 --&gt;    &lt;property&gt;        &lt;name&gt;mapreduce.framework.name&lt;/name&gt;        &lt;value&gt;yarn&lt;/value&gt;&lt;/property&gt;第五个：yarn-site.xml    &lt;!-- 指定YARN的老大（ResourceManager）的地址 --&gt;    &lt;property&gt;        &lt;name&gt;yarn.resourcemanager.192.168.175.130(你的虚拟机IP)&lt;/name&gt;        &lt;value&gt;（你的主机名）&lt;/value&gt;&lt;/property&gt;    &lt;!-- reducer获取数据的方式 --&gt;&lt;property&gt;        &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;        &lt;value&gt;mapreduce_shuffle&lt;/value&gt; &lt;/property&gt;</code></pre><p><strong>将hadoop添加到环境变量</strong></p><pre><code>vim /etc/proflie    export JAVA_HOME=/usr/java/jdk1.7.0_65    export HADOOP_HOME=//usr/soft/hadoop-2.4.1               //jdk安装路径    export PATH=$PATH:$JAVA_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin添加完成后刷新环境source /etc/profile</code></pre><p><strong>格式化namenode（是对namenode进行初始化）</strong></p><pre><code>hadoop namenode -format</code></pre><p><strong>启动hadoop</strong></p><pre><code>先启动HDFSstart-dfs.sh再启动YARNstart-yarn.sh</code></pre><p><strong>验证是否启动成功</strong></p><pre><code>使用jps命令验证：输入jps命令出现下列说明启动成功27408 NameNode28218 Jps27643 SecondaryNameNode28066 NodeManager27803 ResourceManager27512 DataNodehttp://192.168.175.130:50070 （HDFS管理界面）http://192.168.175.130:8088 （MR管理界面）</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;hadoop-伪分布式搭建配置&quot;&gt;&lt;a href=&quot;#hadoop-伪分布式搭建配置&quot; class=&quot;headerlink&quot; title=&quot;hadoop 伪分布式搭建配置&quot;&gt;&lt;/a&gt;hadoop 伪分布式搭建配置&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;安装JDK&lt;/str
+      
+    
+    </summary>
+    
+    
+    
+      <category term="linux" scheme="http://Threee-hub.github.io/tags/linux/"/>
+    
+      <category term="hadoop" scheme="http://Threee-hub.github.io/tags/hadoop/"/>
+    
+      <category term="java" scheme="http://Threee-hub.github.io/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Linux命令</title>
-    <link href="http://Threee-hub.github.io/2019/11/26/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
-    <id>http://Threee-hub.github.io/2019/11/26/linux常用命令/</id>
-    <published>2019-11-26T15:35:58.000Z</published>
-    <updated>2019-12-18T02:18:13.047Z</updated>
+    <link href="http://Threee-hub.github.io/2019/12/18/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    <id>http://Threee-hub.github.io/2019/12/18/linux常用命令/</id>
+    <published>2019-12-18T15:35:58.000Z</published>
+    <updated>2019-12-19T08:38:56.538Z</updated>
     
     <content type="html"><![CDATA[<h3 id="Linux命令"><a href="#Linux命令" class="headerlink" title="Linux命令"></a>Linux命令</h3><blockquote><p><strong>常用命令</strong>（查看目录、创建目录、删除、剪切、复制文件/目录）<br>man 命令        查看一个命令的用法（q键退出）<br>文件管理命令                   //命令里输入部分后 可以按tab键可以进行自动补全，前提是只有一个<br> ls 查看目录                                             linux常见目录<br>    -a  查看所有文件 包括隐藏文件                 /        根目录<br>    -l   查看详细列表                         ~        代表当前用户的家目录<br>    -d  仅仅查看目录                         home        每个用户会在home目录下创建一个新的目录对应该用户的家目录<br>cd 切换目录<br>pwd 查看当前所在的路径<br>touch 文件名   触摸一个文件，存在就改变文件的最后访问时间，不存在就创建文件<br>mkdir 目录名   创建目录        -p  递归创建（可以同时创建多级目录） Eg：mkdir -p java/thread/test<br>cp 源文件 目标地址       拷贝文件或目录       -r   递归拷贝（拷贝文件夹）   Eg：cp -r 源目录 目标目录<br>rmdir 目录名称    删除空目录<br>rm 文件名               删除文件               rm -r 目录名       递归删除目录    -f   强制删除<br>mv 文件名           剪切文件或目录     mv  源文件或目录   目标位置    mv    原文件名   新文件名   重命名文件</p></blockquote><blockquote><hr></blockquote><blockquote><p><strong>查看文件</strong><br>cat 文件名   查看文件里面的内容   -n  查看内容并显示行号   cat -n |more 分页查看文件里面的内容并显示行号，按空格查看下一页，按回车查看下一行<br>tac 文件名   倒过来查看文件里面的内容<br>head -n（数字）文件名    查看文件前n行的内容<br>tail -n（数字）文件名    查看文件后n行的内容</p></blockquote><blockquote><hr></blockquote><blockquote><p><strong>编辑文件</strong><br>vi(vim)    文件名     编辑文件，若不存在则创建这个文件 三种模式：</p></blockquote><ol><li>命令模式    vi(vim)   文件名<br>nyy   n代表一个数值  默认为1，表示复制光标开始往下n行<br>p  粘贴<br>ndd   n代表一个数值  默认为1，表示删除光标开始往下n行<br>：set number   设置行号<br>：行号  让光标定位到指定行</li><li>输入模式 （在命令模式输入a,A,i,I,o  进入输入模式，按esc回到命令模式）<br>i（在当前光标位置的前面插入）I（返回当前行最前面进行输入）<br>a（在当前光标位置的后面插入）A（返回当前行最后面进行输入）<br>o（在下一行插入）</li><li>编辑模式（在命令模式输入：进入编辑模式，按esc回到命令模式）：q 退出  ：w  保存  ：！强制   ：q！强制退出  ：wq 保存退出</li></ol><blockquote><hr></blockquote><blockquote><p><strong>查找文件</strong><br>find -name 文件名       根据文件名查找   “<em>文件部分名*”（查找包含该部分文件名的文件）<br>       -iname  文件名     根据文件名查找（忽略大小写）<br>find 指定的路径 -name 文件名         查找路径下来所有该文件名的文件                    Eg: find /home/ -name test<br>find /home/ -name “</em>.log”  查找该后缀的文件（在home路径下）<br>find  -size [+(大于)或-(小于)]文件大小     根据文件大小进行查找（大小单位默认字节）                        Eg：find /home/ -size +1G    查找该路径下大于1g的文件    单位：c，k，M,G<br>       -atime       根据最近修改时间进行查找（天）<br>       -ctime<br>       -mtime<br>find /home/ -atime +5    查找5天前访问过的文件（-5则是5天之内）<br>逻辑运算查找：<br>    -a   and   逻辑与<br>    -o     or     逻辑或<br>    -not  非      取反                       Eg：find /home/ -name “<em>hello</em>” -a -size +1M   查找文件名中包含hello的以及大小大于1M的文件</p></blockquote><blockquote><hr></blockquote><blockquote><p><strong>关机与重启</strong><br>reboot   重启<br>shutdown -h now 现在关机<br>shutdown -h 19:30 定时关机</p></blockquote><blockquote><hr></blockquote><blockquote><p><strong>文件的压缩与解压缩</strong></p></blockquote><ol><li>zip压缩文件命令<br> zip 压缩包名  文件名                                同时压缩多个则在文件名后再加文件名<br> zip  -r   压缩包名  目录名                          压缩目录所有文件在同一压缩包中<br> unzip 压缩包名                                     解压缩在当前目录下<br> unzip -d 指定一个目录 压缩包名                    解压缩到指定一个目录下</li><li>gz压缩文件命令<br> gzip 要压缩的文件名                                生成压缩文件后，原文件会默认删除<br>如果要压缩目录，先要把目录压缩成zip包，再压缩成gz包<br> gunzip 要解压缩的文件名                            解压缩.gz文件</li><li>tar压缩文件命令<br> tar 文件/目录/tar压缩包                            压缩文件/目录，解压缩<br> -c 打包<br> -v 显示详细信息<br> -f 用来指定压缩文件名<br>Eg：tar -cvf xxx.tar /home/xxx.xx                   把目录该文件打包压缩成xxx.tar<br> -x 解压缩<br> -C 指定解压文件存储路径<br>Eg：tar -xvf /home/java/test/xxx.tar -C /home/java    把/home/java/test/xxx.tar解压缩到/home/java下</li></ol>]]></content>
     
