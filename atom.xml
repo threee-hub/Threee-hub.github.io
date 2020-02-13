@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://Threee-hub.github.io/"/>
-  <updated>2020-01-29T06:16:23.644Z</updated>
+  <updated>2020-02-13T03:16:27.781Z</updated>
   <id>http://Threee-hub.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>排序算法一</title>
+    <link href="http://Threee-hub.github.io/2020/02/13/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E4%B8%80/"/>
+    <id>http://Threee-hub.github.io/2020/02/13/排序算法一/</id>
+    <published>2020-02-13T03:14:57.000Z</published>
+    <updated>2020-02-13T03:16:27.781Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="常见排序算法-一-冒泡排序、选择排序、插入排序"><a href="#常见排序算法-一-冒泡排序、选择排序、插入排序" class="headerlink" title="常见排序算法 一 (冒泡排序、选择排序、插入排序)"></a>常见排序算法 一 (冒泡排序、选择排序、插入排序)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">package com.day02;</span><br><span class="line"></span><br><span class="line">import java.util.Arrays;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * @author threee</span><br><span class="line"> * @date 2020/2/12 - 12:35</span><br><span class="line"> * 排序算法     (冒泡排序、选择排序、插入排序)</span><br><span class="line"> * 冒泡与选择的区别：</span><br><span class="line"> * 1、冒泡排序是比较相邻两位 ary[j] 和 ary[j+1]</span><br><span class="line"> * 2、选择排序是每一轮 其他的数和每轮的第一个数比   ary[i] 和 ary[j]</span><br><span class="line"> */</span><br><span class="line">public class Arry2Demo &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">     int[] ary = new int[]&#123;11,2,6,3,9,1,323,124,45,24,67,32 &#125;;</span><br><span class="line">     //bull(ary);</span><br><span class="line">     //select(ary);</span><br><span class="line">        insert(ary);</span><br><span class="line">     System.out.println(Arrays.toString(ary));</span><br><span class="line">    &#125;</span><br><span class="line">    //冒泡排序</span><br><span class="line">    public static void bull(int[] ary)&#123;</span><br><span class="line">        for (int i=0; i&lt;ary.length-1; i++)&#123; //i控制轮数</span><br><span class="line">            for (int j=0; j&lt;ary.length-1-i ; j++)&#123;//j控制元素下标</span><br><span class="line">                if (ary[j]&gt;ary[j+1])&#123;           //相邻两个元素比</span><br><span class="line">                    int t = ary[j+1];</span><br><span class="line">                    ary[j+1] = ary[j];</span><br><span class="line">                    ary[j] = t;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    //选择排序  每一轮 其他的数和每轮第一个数比</span><br><span class="line">    public static void select(int[] ary)&#123;</span><br><span class="line">        for (int i=0; i&lt;ary.length-1; i++)&#123; //i控制轮数</span><br><span class="line">            for (int j=i+1; j&lt;ary.length; j++)&#123;//j控制元素</span><br><span class="line">                if (ary[i]&gt;ary[j])&#123;         //i和j比</span><br><span class="line">                    int t = ary[j];</span><br><span class="line">                    ary[j] = ary[i];</span><br><span class="line">                    ary[i] = t;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    //插入排序</span><br><span class="line">    /* 把数组分两半，从第二个元素起为右半部分(取数快，比较数慢，所以左边只留一个，提高效率)</span><br><span class="line">     * 拿右半部分的每个元素取出来</span><br><span class="line">     * 和左半部分进行比较</span><br><span class="line">     * 再插入到左半部分相应的位置</span><br><span class="line">     **/</span><br><span class="line">    public static void insert(int[] ary)&#123;</span><br><span class="line">        //首先从第二个元素开始拆俩半</span><br><span class="line">        //左半部分一开始只有一个数</span><br><span class="line">        int j = 0;</span><br><span class="line">        //右半部分循环</span><br><span class="line">        for (int i=1; i&lt;ary.length; i++)&#123;</span><br><span class="line">            //把右半的元素取出来，t要放在第二层for循环外</span><br><span class="line">            //因为t要和每个左边的元素比</span><br><span class="line">            int t = ary[i];</span><br><span class="line">            //左边循环</span><br><span class="line">            for (j=i-1; j&gt;=0; j--)&#123;</span><br><span class="line">                if (t&lt;ary[j])&#123;  //t和每个j比，如果比t大，j向右移动一位</span><br><span class="line">                    ary[j+1] = ary[j];</span><br><span class="line">                    ary[j] = t;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;常见排序算法-一-冒泡排序、选择排序、插入排序&quot;&gt;&lt;a href=&quot;#常见排序算法-一-冒泡排序、选择排序、插入排序&quot; class=&quot;headerlink&quot; title=&quot;常见排序算法 一 (冒泡排序、选择排序、插入排序)&quot;&gt;&lt;/a&gt;常见排序算法 一 (冒泡排序、
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Java" scheme="http://Threee-hub.github.io/tags/Java/"/>
+    
+      <category term="算法" scheme="http://Threee-hub.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>Oracle 数据库基本语句 一</title>
